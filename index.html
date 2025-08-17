@@ -1,85 +1,98 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBA316DOMPARTTWO</title>
-    <link rel="styles" href="styles/styles.css">
-    <script defer src="scripts/scripts.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tia Vene’s House — Order Page</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="scripts/scripts.js" defer></script>
 </head>
-
 <body>
+  <!-- HEADER -->
+  <header>
+    <h1>Tia Vene’s House</h1>
+    <p><strong>Telephone:</strong> (718) 526-4101</p>
+    <p><strong>Email:</strong> <a href="mailto:venenardarivase0@gmail.com">venenardarivase0@gmail.com</a></p>
+<p><img src="images/casaview.jpg" "=" 100px; display:block:margin: 0 auto;"></p>  
 
-    <!-- Header Section -->
-    <header>
-        <h1>Tia Venes House</h1>
-        <p><strong>📞 Telephone:</strong> (718)526-4101</p>
-        <p><a href="mailto:venerandarivas60@gmail.com">venerandarivas60@gmail.com</a></p>
-    </header>
+</header>
 
-    <section>
-        <h2> Welcome to Tia Venes House </H2>
-        <P>We are so happy you came over. Having a get together? Para cuando la fiesta?
-         We specialize in El Salvadorian cusine. Everything from pupusas, yuca and chicharron, to the classical
-         chicken sandwich that are severed for New Years!!! And lets not forget the Horchata!!! So please take a look
-         around and submit your request we look forward to serving you!!!</P>
-    </section>
+  <!-- WELCOME INTRO (your original text wrapped in a card) -->
+  <section class="card">
+    <h2>Welcome to Tia Vene’s House!</h2>
+    <img src="images/islaview.jpg" alt="islaview" width="400">
+    <p>Born and raised in El Salvador, Tía Vene comes from the Rivas family—well-known for their strong roots and welcoming spirit. Family has always been at the heart of everything she does, and friends are treated just the same. When it comes to cooking, Tía Vene brings authentic flavors seasoned with tradition and always sprinkled with love.
+      Whether you’re planning a birthday, quinceañera, family reunion, or simply don’t feel like cooking, let Tía Vene take care of it for you. With over 30 years of experience in the kitchen, she knows how to create meals that feel like home. Let us help make your next event unforgettable with authentic Salvadoran flavors made from the heart.</P>
+  </section>
 
-    <section>
-        <h2>Tell us about yourself</h2>
-        <form>
-            <label for="name">Full Name:</label><br>
-            <input type="text" id="name" name="name" placeholder="Full Name"><br><br>
+  <!-- CONTACT FORM -->
+  <form id="contact-form" class="card" novalidate>
+    <h2>Your Info</h2>
 
-            <label for="email">Email Address:</label><br>
-            <input type="email" id="email" name="email" placeholder="Email"><br><br>
+    <label for="name">Full Name</label>
+    <input id="name" name="name" type="text" placeholder="Full Name" required>
 
-            <label for="Food Allegry">Food Allegry:</label><br>
-            <textarea id="Food Allegry" name="Food Allegry"
-                placeholder="Please let us know in detail we take your health serious no allegry is to small" rows="5"
-                cols="30"></textarea><br><br>
+    <label for="email">Email Address</label>
+    <input id="email" name="email" type="email" placeholder="email@example.com" required>
 
-        </form>
-    </section>
+    <label for="allergy">Allergies / Notes</label>
+    <textarea id="allergy" name="allergy" rows="4" placeholder="Let us know any allergies or special requests"></textarea>
 
-    <section>
-        <h2>Lets get the Party Started!</h2>
-        <!-- Form with dropdown -->
-        <form>
-            <label for="service">Select a service:</label>
-            <select id="service" name="service">
-                <option value="Pupusas">Pupusas</option>
-                <option value="Yuca & Chicharron">Yuca & Chicharron</option>
-                <option value="NewYears Chicken Sandwich">NewYears Chicken Sandwich</option>
-                <option value="Pan de rodaja Chicken Sandwich">Pan de rodaja Chicken Sandwich</option>
-                <option value="Enchiladas">Enchiladas</option>
-                <option value="Pastelitos de Pina">Pastelitos de Pina</option>
-                <option value="Mini Quesadillas">Mini Quesadillas</option>
-                <option value="Horchata">Horchata</option>
-                <option value="Jugo de Marano">Jugo de Marano</option>
+    <button type="submit">Save My Info</button>
+  </form>
+  </section>
+  <!-- ORDER FORM -->
+  <form id="order-form" class="card">
+    <h2>Build Your Order</h2>
 
-            </select>
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </section>
+    <label for="service">Choose a food or drink</label>
+    <select id="service" name="service">
+      <option value="">-- choose one --</option>
+      <option value="pupusas">Pupusas</option>
+      <option value="yuca">Yuca and Chicharrón</option>
+      <option value="sandwich">Pan de Pollo</option>
+      <option value="enchiladas">Enchiladas</option>
+      <option value="pastelitos">Pastelitos de Piña</option>
+      <option value="quesadillas">Mini Quesadillas</option>
+      <option value="horchata">Horchata</option>
+      <option value="maranon">Jugo de Marañón</option>
+    </select>
 
+    <!-- Submenu goes here (JS will fill it in) -->
+    <div id="submenu" class="hidden"></div>
 
+    <button id="place-order" type="submit">Place Order</button>
+  </form>
 
+  <!-- ORDER SUMMARY -->
+  <section class="card">
+    <h2>Order Summary</h2>
+    <ul id="order-list"></ul>
+    <p id="order-total"><strong>Total: $0.00</strong></p>
+    <button type="button" id="clear-order" class="danger">Clear Order</button>
+  </section>
+<!-- FOOD GALLERY (simple + clean) -->
+<section class="card">
+  <h2>Our Food Gallery</h2>
+  <p>Take a look at our delicious dishes! 😋</p>
+  <!-- IMPORTANT: class name is "gallery" (all lowercase) -->
+  <div class="gallery">
+    <img src="images/pupusas.jpg"         alt="Pupusas on a plate">
+    <img src="images/maranon.jpg"         alt="Maranon">
+    <img src="images/enchiladas.jpg"      alt="Enchiladas with salsa">
+    <img src="images/empanadassweet.jpg"  alt="Empanadas">
+    <img src="images/miniquesadillas.jpg" alt="Mini Quesadillas">
+    <img src="images/pandepollo.jpg"      alt="Pan de Pollo">
+    <img src="images/pastellitospina.jpg" alt="Pastelitos de Pina">
+    <img src="images/seafood.jpg"         alt="Seafood dish">
+    <img src="images/tamales.jpg"         alt="Tamales">
+    <img src="images/yucachicha.jpg"    alt="yucachicha">
+  </div>
+</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
+  <footer>
+    <small>Thank you for supporting Tia Vene’s House 💙</small>
+  </footer>
 </body>
-
 </html>
