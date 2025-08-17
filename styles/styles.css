@@ -18,7 +18,7 @@ html, body {
   line-height: 1.5;
 }
 
-header, footer { text-align: center; padding: 14px 16px; }
+header, footer,h2 { text-align: center; padding: 14px 16px; }
 h1 { margin: 0 0 6px; }
 a { color: var(--brand); }
 

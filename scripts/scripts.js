@@ -290,7 +290,7 @@ function getTotal() {
 /* -----------------------------
    8) BOM EXAMPLE (window size)
    -----------------------------
-   This prints ONLY in the DevTools Console (F12). It does not show on the page.
+   This prints ONLY in the DevTools, It does not show on the page.
 */
 console.log('Window size:', window.innerWidth, '×', window.innerHeight);
 

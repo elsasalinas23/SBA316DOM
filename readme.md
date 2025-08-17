@@ -43,10 +43,6 @@ A tiny single-page ordering app that uses **DOM** + **BOM** features to build me
 4. Remove items with **Remove**. Clear all with **Clear order**.
 5. Click **Place Order**.
 
-## Stretch Ideas
-- Persist cart to `localStorage`
-- Add images per item in the cart
-
 ## Credits
 - Photos: Personal pictures taking by self 
 -
