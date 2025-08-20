@@ -13,7 +13,7 @@
   <header>
     <h1>Tia Vene’s House</h1>
     <p><strong>Telephone:</strong> (718) 526-4101</p>
-    <p><strong>Email:</strong> <a href="mailto:venenardarivase0@gmail.com">venenardarivase0@gmail.com</a></p>
+    <p><strong>Email:</strong> <a href="mailto:venenardarivas60@gmail.com">venenardarivas60@gmail.com</a></p>
 <p><img src="images/casaview.jpg" "=" 100px; display:block:margin: 0 auto;"></p>  
 
 </header>
@@ -43,6 +43,7 @@
   </form>
   </section>
   <!-- ORDER FORM -->
+   <section class="card" id="builder" 
   <form id="order-form" class="card">
     <h2>Build Your Order</h2>
 
@@ -58,20 +59,27 @@
       <option value="horchata">Horchata</option>
       <option value="maranon">Jugo de Marañón</option>
     </select>
-
     <!-- Submenu goes here (JS will fill it in) -->
     <div id="submenu" class="hidden"></div>
 
     <button id="place-order" type="submit">Place Order</button>
   </form>
-
-  <!-- ORDER SUMMARY -->
-  <section class="card">
-    <h2>Order Summary</h2>
-    <ul id="order-list"></ul>
-    <p id="order-total"><strong>Total: $0.00</strong></p>
-    <button type="button" id="clear-order" class="danger">Clear Order</button>
-  </section>
+ </section>
+  <!-- ORDER SUMMARY ( shows cart + total + action buttons) -->
+  <p id="order-summary" class="card"></p>
+  <section class=" card">
+   <h2> Order SUMMARY</h2>
+  <ul id="order-list"></ul> <!-- js fills this list with items-->
+    <p id="order-total"><strong>Total: $0.00</strong></p><!-- js writes the running total here-->
+    
+    <div class="actions">
+    <button id="clear-order"  type="button">Clear Order </button>
+    <button id="place-order" type="button">Place Order</button>
+   </div>
+</section>
+   <!-- confrimation line appears after place order-->
+    <p id="confrimation" class="hidden"></p>
+</section>
 <!-- FOOD GALLERY (simple + clean) -->
 <section class="card">
   <h2>Our Food Gallery</h2>

@@ -1,107 +1,153 @@
 :root {
-  --brand: #160d1f;
-  --ink: #090c72;
-  --muted: #061004;
-  --bg: #71b8e3;
-  --line: #12233a;
-  --danger: #488f89;
+    --brand: #160d1f;
+    --ink: #090c72;
+    --muted: #061004;
+    --bg: #71b8e3;
+    --line: #12233a;
+    --danger: #488f89;
 }
 
-* { box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Arial, sans-serif;
-  line-height: 1.5;
+* {
+    box-sizing: border-box;
 }
 
-header, footer,h2 { text-align: center; padding: 14px 16px; }
-h1 { margin: 0 0 6px; }
-a { color: var(--brand); }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Arial, sans-serif;
+    line-height: 1.5;
+}
 
+header,
+footer,
+h2 {
+    text-align: center;
+    padding: 14px 16px;
+}
+
+h1  {
+    margin: 0 0 6px;
+}
+
+a {
+    color: var(--brand);
+}
+
+/* The card look you already have applies to both builder and summary */
 .card {
-  max-width: 900px;
-  margin: 14px auto;
-  background: #5f83f7;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  box-shadow: 0 1px 3px rgba(9, 7, 7, 0.05);
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    background: #5f83f7;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(9, 7, 7, 0.05);
+}
+label {
+    display: block;
+    margin: 10px 0 6px;
+    font-weight: 600;
 }
 
-label { display: block; margin: 10px 0 6px; font-weight: 600; }
-input, select, textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #b6dff1;
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #b6dff1;
 }
 
 button {
-  margin-top: 12px;
-  padding: 10px 14px;
-  border: 0;
-  border-radius: 12px;
-  background: var(--brand);
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
+    padding: .5rem .8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: var(--brand);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
 }
-button:hover { filter: brightness(.95); }
-button:disabled { opacity: .6; cursor: not-allowed; }
 
-button.danger { background: var(--danger); }
+button:hover {
+    filter: brightness(.96);
+}
 
-.hidden { display: none; }
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
 
+button.danger {
+    background: var(--danger);
+}
+
+.hidden {
+    display: none;
+}
+.actions{
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
 /* order list rows */
-#order-list { list-style: none; padding: 0; margin: 10px 0; }
+#order-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5rem;
+}
+
 #order-list li {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 10px;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px dashed var(--line);
+    display: flex;
+     align-items: center;
+    padding: 0;
+    border-bottom: 1px dashed var(--line);
 }
-#order-list li button { margin-top: 0; }
 
-#order-total { font-size: 1.05rem; }
-
-/* small screens */
-@media (max-width: 560px) {
-  .card { margin: 10px 8px; }
+#order-list li button {
+    margin-top: 0;
 }
+
+#order-total {
+    font-size: 1.05rem;
+}
+
 /* === FOOD GALLERY ===
    makes a tidy grid that works on phones and laptops */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-  margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
 }
 
 .gallery img {
-  width: 100%;          /* fill the grid cell */
-  height: 160px;        /* same height for all pics */
-  object-fit: cover;    /* crop nicely if needed */
-  border-radius: 12px;  /* rounded corners */
-  border: 2px solid #eee;
-  box-shadow: 0 2px 4px rgba(0,0,0,.1);
-  transition: transform .15s ease-in-out;
+    width: 100%;
+    /* fill the grid cell */
+    height: 160px;
+    /* same height for all pics */
+    object-fit: cover;
+    /* crop nicely if needed */
+    border-radius: 12px;
+    /* rounded corners */
+    border: 2px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    transition: transform .15s ease-in-out;
 }
 
 .gallery img:hover {
-  transform: scale(1.03); /* tiny zoom on hover */
+    transform: scale(1.03);
+    /* tiny zoom on hover */
 }
+
 header img {
-  width: 400px;
-  display:block;
-  margin:0 auto;
-  border-radius: 5px;
-  transition: all 0.5s;
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    transition: all 0.5s;
 }
